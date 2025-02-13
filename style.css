@@ -1,0 +1,13 @@
+body{
+    background-color: violet;
+}
+.container{
+    color: blueviolet;
+    margin: 15px;
+    border: 25px;
+    padding: 20px;
+    background-color: aqua;
+    border-radius: 25px;
+    width: 25%;
+    text-align: left;
+}
