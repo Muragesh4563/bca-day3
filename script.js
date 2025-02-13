@@ -1,43 +1,36 @@
-document.addEventListener("Todos",init)
-
-function init(){
-    loadTasks();
+function showAlert(){
+    alert('Hello! the button is clicked,this JS class')
 }
-
-function loadTasks(){
-    const tasks = JSON.parse(localStorage.getItem("tasks"))||[];
-    tasks.forEach(task => addTaskToDOM(task));
-
+function changeText(){
+    document.getElementById('text').innerHTML = "Text Changed";
 }
-function addTask(){
-    const taskInput = document.getElementById("taskInput");
-    const task = taskInput.value.trim();
-    if(task == "") return;
-
-    addTaskToDOM(task);
-    saveTask(task);
-    taskInput.value="";
+function handleClick() {
+    document.getElementById('clickMessage' ).innerHTML='Button Clicked!';
 }
-function addTaskToDOM(task){
-    const taskList = document.getElementById("taskList");
-    const li = document.createElement("li");
-    li.innerHTML = `${task} <button class= "remove-btn">Remove</button>`
-    taskList.appendChild(li);
-
-    li.querySelector(".remove-btn").addEventListener("click",function(){
-        removeTask(task,li);
-    })
+function validateForm() {
+    let name = document.getElementById('name').Value;
+    if(name == '') {
+        alert('Please enter your name.');
+        return false;
+    }
+    return true;
 }
-
-function saveTask(task){
-    const tasks = JSON.parse(localStorage.getItem("tasks"))||[];
-    tasks.push(task);
-    localStorage.setItem("tasks",JSON.stringify(tasks));
+function checkNumber() {
+    let num = parseInt(document.getElementById('numberInput').value);
+    let result = num > 10 ? 'Greater than 10': '10 or less';
+    document.getElementById('numberResult').innerHTML = result;
 }
-
-function removeTask(task,element){
-    let tasks = JSON.parse(localStorage.getItem("tasks"));
-    tasks = tasks.filter(t => t!==task);
-    localStorage.setItem("tasks",JSON.stringify(tasks));
-    element.remove();
+function CheckAge() {
+    let age = parseInt(document.getElementById('ageInput').value);
+    if(age >= 18){
+        document.getElementById('ageResult').innerHTML = 'you are an adult';
+    } else {
+        document.getElementById('ageResult').innerHTML = 'You are a minor';
+    }
+}
+function displayArrayItem(){
+    let items = ['Apple', 'Banana', 'Cherry', 'Date', 'Elderberry'];
+    let index = parseInt(document.getElementById('arrayIndex').value);
+    let result = items[index] || 'Invalid index';
+    document.getElementById('arrayResult').innerHTML = result;
 }

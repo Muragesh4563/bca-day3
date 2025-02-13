@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Array Selecation</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,13 +16,14 @@
         <a href="array.html">Array</a>
         <a href="if_else.html">if_else</a>
     </nav>
-    <nav>
-        <a href="alert.html">Alert</a>
-        <a href="dom.html">DOM</a>
-    </nav>
+    <div><h5>Items =['Apple','Banana','Cherry','Date',ElderBerry'];</h5></div>
     <div class="container">
-        <h1>Welcome to Rohan home</h1>
-        <p>This is my first home</p>
+        <h2>Select an Array Item</h2>
+
+        <input type="number" id="arrayIndex" placeholder="Enter index (0-4)">
+        <button onclick="displayArrayItem()">Show Item</button>
+        <p id="arrayResult"></p>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
